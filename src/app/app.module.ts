@@ -10,6 +10,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 import{NavBarService} from './nav-bar.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSliderModule } from '@angular/material/slider';
+import { CardComponent } from './component/card/card.component';
+import { ListCardComponent } from './component/list-card/list-card.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { MatSliderModule } from '@angular/material/slider';
     InnerRouterComponent,
     NavBarComponent,
     FooterComponent,
-    MainPageComponent
+    MainPageComponent,
+    CardComponent,
+    ListCardComponent
   ],
   imports: [
     

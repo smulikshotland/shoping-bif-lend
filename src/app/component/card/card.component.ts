@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
+  cunter = 1;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  toAdd(){
+    this.cunter++;
+  }
+
+  toDecreas(){
+    if(this.cunter>0)
+    this.cunter--;
+  }
+
 
 }

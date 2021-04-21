@@ -30,12 +30,23 @@ export class ShopingCartService {
   constructor() { }
 
   addToShopingCart(itme){
-    const{id}=itme;
-    const result = this.ShopingCart.filter(x => x.id === id);
-    if(result){
-    console.log("resultFilter",result);
-    }
+    const{id ,amount }=itme;
+    const index = this.ShopingCart.findIndex(x => x.id === id);
+    if(index == -1)
     this.ShopingCart.push(itme)
+
+    else{
+      const update = this.ShopingCart.map(el => {
+        if(el.id == id){
+        return { ...el,
+          amount:el.amount + amount,
+        }
+       }
+      else
+        return el;
+    });
+    this.ShopingCart=update;
+    }
   }
 
 

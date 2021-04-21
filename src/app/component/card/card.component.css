@@ -1,6 +1,8 @@
 .card-h{
-    /* width: 220px;
-    height: 300px; */
+  width: 200px;
+    height: 300px; 
+    text-align: center;
+    padding: 10px;
 }
 .cRow{
     display: flex;
@@ -8,7 +10,7 @@
 .btn{
     border: none;
 }
-.figure-img{
-    height: 100px; 
-   
+.img-fluid{
+    
+
 }

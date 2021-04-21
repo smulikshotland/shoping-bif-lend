@@ -30,6 +30,11 @@ export class ShopingCartService {
   constructor() { }
 
   addToShopingCart(itme){
+    const{id}=itme;
+    const result = this.ShopingCart.filter(x => x.id === id);
+    if(result){
+    console.log("resultFilter",result);
+    }
     this.ShopingCart.push(itme)
   }
 

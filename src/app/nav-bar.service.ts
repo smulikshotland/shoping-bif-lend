@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class NavBarService {
   headlines=[
-    {name:"עגלת קניות",button:"🛒"},
+    {name:"עגלת קניות",button:"🛒",router:""},
     {name:"הרשמה"},
     {name:"אזור אישי"},
     {name:"אודות"},

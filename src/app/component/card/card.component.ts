@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ShopingCartService } from './../../services/shoping-cart.service';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() item:{ id: string; title: string; img: string; }
+  @Input() item:{ id: string;name:string, title: string; img: string; }
   cunter = 0;
-
-  constructor() { }
+  showMore = false;
+  constructor(private ShopingCartService:ShopingCartService) { }
 
   ngOnInit(): void {
   }
@@ -24,8 +25,14 @@ export class CardComponent implements OnInit {
   }
 
   addToShopingCard(){
-    console.log(this.item,"cunter",this.cunter);
-    
+    const {id,title,name,img}=this.item
+    this.ShopingCartService.addToShopingCart({
+      id:id,
+      title:title,
+      name:name,
+      img:img,
+      amount:this.cunter
+    }) 
   }
 
 

@@ -5,3 +5,10 @@
 .cRow{
     display: flex;
 }
+.btn{
+    border: none;
+}
+.card-img-top{
+    /* height: 100px; */
+    /* width: ; */
+}

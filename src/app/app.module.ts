@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSliderModule } from '@angular/material/slider';
 import { CardComponent } from './component/card/card.component';
 import { ListCardComponent } from './component/list-card/list-card.component';
+import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ListCardComponent } from './component/list-card/list-card.component';
     FooterComponent,
     MainPageComponent,
     CardComponent,
-    ListCardComponent
+    ListCardComponent,
+    ShopingCartComponent
   ],
   imports: [
     

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  cunter = 1;
+  @Input() item:{ id: string; title: string; img: string; }
+  cunter = 0;
 
   constructor() { }
 
@@ -20,6 +21,11 @@ export class CardComponent implements OnInit {
   toDecreas(){
     if(this.cunter>0)
     this.cunter--;
+  }
+
+  addToShopingCard(){
+    console.log(this.item,"cunter",this.cunter);
+    
   }
 
 

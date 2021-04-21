@@ -1,16 +1,8 @@
-<p>list-card works!</p>
 <div class="cotiner text-center">
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-
-
+   <div *ngFor="let item of data">
+    <app-card [item]="item"></app-card>
+</div>
 </div>
 </div>
 

@@ -2,7 +2,6 @@
   width: 200px;
     height: 300px; 
     text-align: center;
-    padding: 10px;
 }
 .cRow{
     display: flex;
@@ -10,10 +9,28 @@
 .btn{
     border: none;
 }
-.itmeName{
-    background-color: #fff;
-}
-.img-fluid{
-    
 
+.PText {
+    white-space: nowrap; 
+    background-color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   
+  }
+  
+  .PText:hover {
+    overflow: visible;
+    white-space:inherit;
+    background: rgb(247, 246, 190);
+    border-radius: 5px;
+    height: 180px;
+    margin: -185px 0;
+    position: absolute;
+    width: 168px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+.img-fluid{
+    height: 150px;   
 }

@@ -9,7 +9,7 @@ import { ShopingCartService } from './../../services/shoping-cart.service';
 export class CardComponent implements OnInit {
   @Input() item:{ id: string;name:string, title: string; img: string; }
   cunter = 0;
-  showMore = false;
+  showSuccess = false;
   constructor(private ShopingCartService:ShopingCartService) { }
 
   ngOnInit(): void {
@@ -25,14 +25,23 @@ export class CardComponent implements OnInit {
   }
 
   addToShopingCard(){
-    const {id,title,name,img}=this.item
-    this.ShopingCartService.addToShopingCart({
-      id:id,
-      title:title,
-      name:name,
-      img:img,
-      amount:this.cunter
-    }) 
+    if(this.cunter>0){
+      const {id,title,name,img}=this.item;
+      this.ShopingCartService.addToShopingCart({
+        id:id,
+        title:title,
+        name:name,
+        img:img,
+        amount:this.cunter
+      })
+      this.showSuccess = true;
+      setTimeout(()=>{
+            this.showSuccess = false;
+      }, 2000);
+    }
+    else{
+      
+    }
   }
 
 

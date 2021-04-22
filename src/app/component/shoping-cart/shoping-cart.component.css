@@ -8,5 +8,11 @@
 .delete{
     /* margin-top: 296%; */
     padding-top: 46px;
+}
+.item-name{
+    height: 70px;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
 
 }

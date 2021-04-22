@@ -13,7 +13,9 @@ export interface ShopingCart{
 export class ShopingCartService {
   ShopingCart:ShopingCart[]=[];
   data = [
-    {"id":"1","title":"Meat",name:"בשר בקר" ,"img" : "https://images.freeimages.com/images/small-previews/33d/kusbasi-1327458.jpg" },
+    {"id":"1","title":"בשר בקר",name:`בשר בקר הוא בשר שמקורו בשרירי הפרה. בלשון הדיבור משמשת המילה "בשר" בדרך כלל לתיאור בשר בקר, ואילו בשר דג או תרנגול מכונים "דג" ו"עוף" בהתאמה. איברים פנימיים של בקר המשמשים למאכל מכונים לפי שם האיבר (למשל כבד).
+
+    הבשר עשיר בחלבון (כ-15%–25%), שומן (5%–40%) וויטמינים שונים, דוגמת B12. צבעו האדום של בשר בקר נובע מצבען של תרכובות הברזל (ההמוגלובין) המצויות בו. בטמפרטורות גבוהות מאבדות תרכובות אלו את צבען וצבע הבשר המבושל הופך לחום או לאפור.` ,"img" : "https://images.freeimages.com/images/small-previews/33d/kusbasi-1327458.jpg" },
     {"id":"2","title":"Meat",name:"סטייק" ,"img" : "https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
     {"id":"3","title":"Meat",name:"בשר מספר 5" ,"img" : "https://images.pexels.com/photos/112781/pexels-photo-112781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" },
     {"id":"4","title":"Meat",name:"בשר כבש" ,"img" : "https://images.pexels.com/photos/128401/pexels-photo-128401.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
@@ -30,12 +32,24 @@ export class ShopingCartService {
   constructor() { }
 
   addToShopingCart(itme){
-    const{id}=itme;
-    const result = this.ShopingCart.filter(x => x.id === id);
-    if(result){
-    console.log("resultFilter",result);
-    }
+  
+    const{id ,amount }=itme;
+    const index = this.ShopingCart.findIndex(x => x.id === id);
+    if(index == -1)
     this.ShopingCart.push(itme)
+
+    else{
+      const update = this.ShopingCart.map(el => {
+        if(el.id == id){
+        return { ...el,
+          amount: amount,
+        }
+       }
+      else
+        return el;
+    });
+    this.ShopingCart=update;
+    }
   }
 
 

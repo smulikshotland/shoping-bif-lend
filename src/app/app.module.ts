@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InnerRouterComponent } from './inner-router/inner-router.component';
@@ -25,7 +26,7 @@ import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.comp
     ShopingCartComponent
   ],
   imports: [
-    
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

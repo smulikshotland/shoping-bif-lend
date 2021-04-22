@@ -10,7 +10,14 @@ export class ListCardComponent implements OnInit {
 
   constructor(private ShopingCartService:ShopingCartService) { }
   ngOnInit(): void {
-    this.data = this.ShopingCartService.data; 
+    this.ShopingCartService.getData()
+      .then( result => {
+        this.data = result;
+      })
+      .catch( error => {
+        console.log('Error Getting Data: ', error);
+      });
   }
+ 
 
 }

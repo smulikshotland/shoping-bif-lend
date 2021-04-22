@@ -37,7 +37,7 @@ export class CardComponent implements OnInit {
       this.showSuccess = true;
       setTimeout(()=>{
             this.showSuccess = false;
-      }, 2000);
+      }, 1000);
     }
     else{
       

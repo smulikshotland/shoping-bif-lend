@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShopingCartService ,ShopingCart} from './../../services/shoping-cart.service';
+import { ShopingCartService, ShopingCart } from './../../services/shoping-cart.service';
 
 @Component({
   selector: 'app-shoping-cart',
@@ -8,13 +8,13 @@ import { ShopingCartService ,ShopingCart} from './../../services/shoping-cart.se
 })
 export class ShopingCartComponent implements OnInit {
   listShopingCart: ShopingCart[]
-  constructor(private ShopingCartService:ShopingCartService) { }
+  constructor(private ShopingCartService: ShopingCartService) { }
 
   ngOnInit(): void {
     this.listShopingCart = this.ShopingCartService.ShopingCart;
   }
 
-  deleteItme(itme){
+  deleteItme(itme) {
     this.listShopingCart = this.listShopingCart.filter((item) => item.id !== itme.id);
     this.ShopingCartService.rmoveItmeCart(itme);
   }

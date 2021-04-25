@@ -7,7 +7,7 @@ import { ShopingCartService } from './../../services/shoping-cart.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() item:{ id: string;name:string, title: string; img: string; }
+  @Input() item:{ id: string;name:string, title: string; price:number; img: string; }
   cunter = 0;
   showSuccess = false;
   constructor(private ShopingCartService:ShopingCartService) { }
@@ -26,13 +26,14 @@ export class CardComponent implements OnInit {
 
   addToShopingCard(){
     if(this.cunter>0){
-      const {id,title,name,img}=this.item;
+      const {id,title,name,img,price}=this.item;
       this.ShopingCartService.addToShopingCart({
         id:id,
         title:title,
         name:name,
         img:img,
-        amount:this.cunter
+        amount:this.cunter,
+        price:price
       })
       this.showSuccess = true;
       setTimeout(()=>{

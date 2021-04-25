@@ -6,7 +6,6 @@
     margin: 1px;
 }
 .delete{
-    /* margin-top: 296%; */
     padding-top: 46px;
 }
 .item-name{
@@ -15,7 +14,4 @@
     text-overflow: ellipsis;
     overflow-x: hidden;
 
-}
-.row{
-    margin-top: 10px;
 }

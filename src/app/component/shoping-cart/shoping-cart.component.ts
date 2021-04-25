@@ -14,4 +14,9 @@ export class ShopingCartComponent implements OnInit {
     this.listShopingCart = this.ShopingCartService.ShopingCart;
   }
 
+  deleteItme(itme){
+    this.listShopingCart = this.listShopingCart.filter((item) => item.id !== itme.id);
+    this.ShopingCartService.rmoveItmeCart(itme);
+  }
+
 }

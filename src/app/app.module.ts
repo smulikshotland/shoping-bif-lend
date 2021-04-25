@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { InnerRouterComponent } from './inner-router/inner-router.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
-import{NavBarService} from './nav-bar.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatSliderModule } from '@angular/material/slider';
 import { CardComponent } from './component/card/card.component';
@@ -32,7 +31,7 @@ import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.comp
     BrowserAnimationsModule,
     MatSliderModule,
   ],
-  providers: [NavBarService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

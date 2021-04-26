@@ -7,6 +7,7 @@ import { ShopingCartService ,ShopingCart} from './../../services/shoping-cart.se
   styleUrls: ['./shoping-cart.component.css']
 })
 export class ShopingCartComponent implements OnInit {
+  sum
   listShopingCart: ShopingCart[]
   constructor(private ShopingCartService:ShopingCartService) { }
 
@@ -18,5 +19,9 @@ export class ShopingCartComponent implements OnInit {
     this.listShopingCart = this.listShopingCart.filter((item) => item.id !== itme.id);
     this.ShopingCartService.rmoveItmeCart(itme);
   }
+  sumery(price){
+    this.sum+=price
+  }
+  
 
 }

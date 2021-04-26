@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { BehaviorSubject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 
 export interface ShopingCart{
@@ -17,7 +17,7 @@ export interface ShopingCart{
 })
 export class ShopingCartService {
   ShopingCart:ShopingCart[]= [];
-  ShopingCart$ = new BehaviorSubject<ShopingCart[]>(null); 
+  ShopingCart$ = new Subject<ShopingCart[]>(); 
 
  
   constructor(private http: HttpClient) { }
@@ -50,5 +50,7 @@ export class ShopingCartService {
     return this.ShopingCart= filteredShopingCart;
 
   }
+
+
 
 }

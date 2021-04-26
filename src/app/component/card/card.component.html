@@ -9,7 +9,12 @@
             <div [ngClass]="item.name.length > 20 ?  'PText' : ''">
           
                 {{item.name}}
-                </div>
+            </div>
+            <div class="price">
+              <h5>מחיר :
+                {{item.price}}
+              </h5>
+            </div>
              
                 <div class="row">
                   <div class="col-4">
@@ -25,7 +30,7 @@
                     </div>
                    </div>
                   <div class="col-4">
-                    <div class="btn btn-sm" (click)=toDecreas()>
+                    <div class="btn btn-sm" (click)="toDecreas()">
                         <div *ngIf="cunter == 0; then thenIcons else elseIcons"></div>
                         <ng-template #thenIcons>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-dotted" viewBox="0 0 16 16">

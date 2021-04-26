@@ -8,9 +8,9 @@ export interface ShopingCart{
   id:string,
   title:string
   name:string,
-  price:number
-  img:string
-  amount:Number}
+  img:string,
+  price:number,
+  amount:number}
 
 @Injectable({
   providedIn: 'root'

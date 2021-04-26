@@ -9,20 +9,23 @@ import { ShopingCartService ,ShopingCart} from './../../services/shoping-cart.se
 })
 export class ShopingCartComponent implements OnInit {
   listShopingCart:ShopingCart[]
-  price:number=0;
+  price:number;
   subscription: Subscription;
   constructor(private ShopingCartService:ShopingCartService) { }
 
   ngOnInit(): void {
     this.subscription = this.ShopingCartService.getlistShopingCart()
     .subscribe(res => {
+      this.price=0
+
       this.listShopingCart=res;
       console.log("  this.listShopingCart",  this.listShopingCart);
+      this.listShopingCart.map((itme:ShopingCart)=>{
+        this.price +=  itme.price*itme.amount;
+      })
       
     });
-    this.listShopingCart.map(itme=>{
-      this.price += itme.price;
-    })
+  
 
   }
 

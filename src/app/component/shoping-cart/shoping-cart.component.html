@@ -1,20 +1,16 @@
+<a routerLink="/" routerLinkActive="active"><h1> המשך בקניה </h1></a>
+
 <div class="container">
-
     <div class="row">
-
-
-  <div>
-    <a routerLink="/" routerLinkActive="active"><h1> המשך בקניה </h1></a>
-  </div>
     <ol class="list-group col-md-6" >
-        <li *ngFor="let item of listShopingCart" class="list-group-item d-flex justify-content-between align-items-start">
+        <li *ngFor="let item of listShopingCart  " class="list-group-item d-flex justify-content-between align-items-start">
           <div class="row"></div>
           <div class="col-4 col-2">
             <img class="img" src={{item.img}} alt="" srcset="">
           </div>
           <div class="ms-2 me-auto col-8">
             <div class="fw-bold ">{{item.title}}</div>
-            <div [ngClass]="item.name.length > 20 ?  'item-name' : ''">
+            <div [ngClass]="item.name.length > 20 ? 'item-name' : ''">
             {{item.name}}
           </div>
           </div>
@@ -55,10 +51,17 @@
           <div class="p-4">
             <p class="font-italic mb-4">עלויות ההזמנה והמשלוח בכפוף לערכים שהזנתם</p>
             <ul class="list-unstyled mb-4">
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">סך הכל </strong><strong></strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">משלוח</strong><strong>0.00</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">מע"מ</strong><strong></strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">סך הכל כולל מע"מ</strong><strong></strong>
+              <li class="d-flex justify-content-between py-3 border-bottom">
+                <strong class="text-muted">סך הכל </strong><strong>{{price}}</strong>
+              </li>
+              <li class="d-flex justify-content-between py-3 border-bottom">
+                <strong class="text-muted">משלוח</strong><strong>0.00</strong>
+              </li>
+              <li class="d-flex justify-content-between py-3 border-bottom">
+                <strong class="text-muted">מע"מ</strong><strong></strong>
+              </li>
+              <li class="d-flex justify-content-between py-3 border-bottom">
+                <strong class="text-muted">סך הכל כולל מע"מ</strong><strong></strong>
                 <h5 class="font-weight-bold"></h5>
               </li>
             </ul><a routerLink='/payment' href="#" class="btn btn-dark rounded-pill py-2 btn-block">לקופה</a>

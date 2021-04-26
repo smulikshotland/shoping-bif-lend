@@ -8,3 +8,8 @@ a{
 /* background-color: chartreuse; */
 border-radius: 15%;
 }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }

@@ -5,8 +5,8 @@
 .d-flex{
     margin: 1px;
 }
-.delete{
-    padding-top: 46px;
+.btn{
+    border: none;
 }
 .item-name{
     height: 70px;

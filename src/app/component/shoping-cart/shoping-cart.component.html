@@ -59,16 +59,20 @@
             <p class="font-italic mb-4">עלויות ההזמנה והמשלוח בכפוף לערכים שהזנתם</p>
             <ul class="list-unstyled mb-4">
               <li class="d-flex justify-content-between py-3 border-bottom">
-                <strong class="text-muted">סך הכל </strong><strong>{{price}}</strong>
+                <strong>{{price}}</strong><strong class="text-muted">סך הכל </strong>
               </li>
               <li class="d-flex justify-content-between py-3 border-bottom">
-                <strong class="text-muted">משלוח</strong><strong>0.00</strong>
+                <strong>0.00</strong><strong class="text-muted">משלוח</strong>
               </li>
               <li class="d-flex justify-content-between py-3 border-bottom">
+<<<<<<< HEAD
                 <strong class="text-muted">מע"מ</strong><strong>{{price * 0.17 | number}}</strong>
+=======
+                <strong>{{tax | number : '1.0-2'}}</strong><strong class="text-muted">מע"מ</strong>
+>>>>>>> 3130a9b9d5c3cca5a2db38dd6a71f3ef38d5fed9
               </li>
               <li class="d-flex justify-content-between py-3 border-bottom">
-                <strong class="text-muted">סך הכל כולל מע"מ</strong><strong></strong>
+                <strong>{{priceEndTax}}</strong><strong class="text-muted">סך הכל כולל מע"מ</strong>
                 <h5 class="font-weight-bold"></h5>
               </li>
             </ul><a routerLink='/payment' href="#" class="btn btn-dark rounded-pill py-2 btn-block">לקופה</a>

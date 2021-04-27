@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription, Observable } from 'rxjs';
 import { ShopingCartService ,ShopingCart} from './../../services/shoping-cart.service';
 
 @Component({
@@ -7,21 +8,43 @@ import { ShopingCartService ,ShopingCart} from './../../services/shoping-cart.se
   styleUrls: ['./shoping-cart.component.css']
 })
 export class ShopingCartComponent implements OnInit {
-  sum
-  listShopingCart: ShopingCart[]
+  listShopingCart:ShopingCart[]
+  price:number;
+  tax:number;
+  priceEndTax:number;
+  subscription: Subscription;
   constructor(private ShopingCartService:ShopingCartService) { }
 
   ngOnInit(): void {
-    this.listShopingCart = this.ShopingCartService.ShopingCart;
+    this.subscription = this.ShopingCartService.getlistShopingCart()
+    .subscribe(res => {
+      this.price=0
+      this.tax=0
+      this.priceEndTax=0
+      
+
+      this.listShopingCart=res;
+      console.log("  this.listShopingCart",  this.listShopingCart);
+      this.listShopingCart.map((itme:ShopingCart)=>{
+        this.price +=  itme.price*itme.amount;
+        this.tax= this.price * 0.17
+        this.priceEndTax=this.price+this.tax
+      })
+      
+    });
+  
+
   }
 
   deleteItme(itme){
-    this.listShopingCart = this.listShopingCart.filter((item) => item.id !== itme.id);
     this.ShopingCartService.rmoveItmeCart(itme);
   }
-  sumery(price){
-    this.sum+=price
-  }
   
+  
+  
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+}
 
 }

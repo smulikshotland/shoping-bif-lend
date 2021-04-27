@@ -12,7 +12,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { CardComponent } from './component/card/card.component';
 import { ListCardComponent } from './component/list-card/list-card.component';
 import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.component';
-import { NoteShoppingComponent } from './note-shopping/note-shopping.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { NoteShoppingComponent } from './note-shopping/note-shopping.component';
     CardComponent,
     ListCardComponent,
     ShopingCartComponent,
-    NoteShoppingComponent
+    PaymentPageComponent
   ],
   imports: [
     HttpClientModule,

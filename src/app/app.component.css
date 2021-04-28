@@ -3,3 +3,16 @@
     text-align: center;
     margin-top: 20px;
 }
+.fill-space {
+    flex: 1 1 auto;
+}
+.mat-drawer-container {
+    background-color:rgba(0, 0, 0, 0.87);
+}
+.mat-toolbar {
+    color:  #fafafa;
+    background-color: rgba(0, 0, 0, 0.87);
+    position: fixed;
+    top: 0;
+    /* width: 100%; */
+}

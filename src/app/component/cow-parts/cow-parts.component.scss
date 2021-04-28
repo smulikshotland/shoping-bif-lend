@@ -1,0 +1,295 @@
+$main: rgb(173, 54, 17);
+$spots: rgb(247, 127, 15);
+$grass: rgb(0, 255, 0);
+$skin: rgb(252, 139, 105);
+
+$bg: #fda469;
+/* $bg: #704D00; */
+
+
+$width: 30em;
+$height: 19em;
+
+HTML,
+body {
+  width: 100%;
+  height: 100%;
+  background:radial-gradient(lighten($bg, 20%) 50%, $bg 90%);
+}
+
+.cow {
+  width: $width;
+  height: $height;
+  margin: auto;
+  position: absolute;
+  bottom: 2em;
+  left: 5em;
+  left: calc(50% - $width);
+  
+  .head {
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    .ear {
+      width: 12%;
+      height: 25%;
+      border: 2px solid #000;
+      border-bottom: 0;
+      border-radius: 60% 60% 60% 60%;
+      background: $main;
+      position: relative;
+      top: 5%;
+      z-index: 30;
+      
+      &::before {
+        display: block;
+        content: '';
+        width: 60%;
+        height: 60%;
+        background: $skin;
+        border-radius: 60% 60% 60% 60%;
+        position: relative;
+        top: 20%;
+        left: 20%;
+      }
+      
+      &.left {
+        float: left;
+        left: 7%;
+        transform: rotate(-70deg);
+      }
+      
+      &.right {
+        float: right;
+        right: 7%;
+        transform: rotate(70deg);
+        animation: earFlick 10s infinite ease-out;
+      }
+    }
+    
+    .face {
+      width: 60%;
+      height: 50%;
+      background: $main;
+      position: relative;
+      top: 10%;
+      left: 20%;
+      border-radius: 40% 40% 70% 70%;
+      z-index: 29;
+      border: 2px solid #000;
+      
+      &::before, &::after  {
+        content: '';
+        display: block;
+        width: 6%;
+        height: 13%;
+        background: #000;
+        position: absolute;
+        top: 30%;
+        border-radius: 50%;
+      }
+      
+      &::before {
+        left: 30%;
+      }
+      
+      &::after {
+        right: 30%;
+      }
+    }
+    
+    .nose {
+      width: 60%;
+      height: 40%;
+      background: $skin;
+      position: relative;
+      z-index: 99;
+      left: 20%;
+      top: -15%;
+      border: 2px solid #000;
+      border-radius: 50% 40% 50% 40%;
+      animation: chew 2s infinite ease-in-out;
+      
+      &::before, &::after  {
+        content: '';
+        display: block;
+        width: 8%;
+        height: 13%;
+        background: #000;
+        position: absolute;
+        top: 30%;
+        border-radius: 50%;
+      }
+      
+      &::before {
+        left: 40%;
+      }
+      
+      &::after {
+        right: 20%;
+      }
+    }
+    
+    .grass {
+      border-radius: 50%;
+      box-shadow: 10px 10px 0 $grass;
+      height: 100px;
+      width: 100px;
+      transform: rotate(-130deg);
+      position: absolute;
+      bottom: -15%;
+      left: 35%;
+      animation: grass 2s infinite ease-in-out;
+      
+      &::before, &::after  {
+        content: '';
+        display: block;
+        border-radius: 50%;
+        box-shadow: 10px 10px 0 $grass;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        bottom: 10%;
+        animation: chew 2s infinite ease-in-out;
+      }
+      
+      &::before {
+        left: 10%;
+      }
+    }
+  }
+  
+  .body {
+    border: 2px solid #000;
+    width: 60%;
+    height: 50%;
+    position: relative;
+    left: 10%;
+    top: 5%;
+    background: $main;
+    border-radius: 50% 30% 50% 30%;
+    overflow: hidden;
+    z-index: 10;
+    
+    .spot {
+      width: 15%;
+      height: 25%;
+      background: $spots;
+      border-radius: 50%;
+      position: relative;
+      
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          left: random(70) * 1%;
+          top: random(70) * 1%;
+          width: random(50) * 1%;
+          height: random(50) * 1%;
+        }
+      }
+    }
+  }
+
+	.leg {
+    border: 2px solid #000;
+    border-top: 0;
+    width: 5%;
+    height: 50%;
+    background: $main;
+    border-radius: 30% 30% 20% 20%;
+    position: absolute;
+      
+    &::before, &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      background: $spots;
+      width: 70%;
+      height: 10%;
+      bottom: -5%;
+    }
+    
+    &::before {
+      left: -10%;
+      transform: rotate(20deg);
+    }
+
+    &::after {
+      right: -10%;
+      transform: rotate(-20deg); 
+    }
+    
+    &.front {
+      
+      &.right {
+        right: 50%;
+        z-index: 15;
+      }
+      
+      &.left {
+        right: 40%;
+        z-index: 1;
+      }
+    }
+    
+    &.back {
+      
+      &.right {
+        left: 15%;
+        z-index: 15;
+      }
+      
+      &.left {
+        left: 25%;
+        z-index: 1;
+      }
+    }
+  }
+
+  .tail {
+    width: 3%;
+    height: 20%;
+    border: 2px solid #000;
+    background: $main;
+    position: absolute;
+    top: 23%;
+    left: 5%;
+    transform: rotate(50deg);
+    border-radius: 0 0 40% 40%;
+    
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      background: $spots;
+      width: 180%;
+      height: 60%;
+      bottom: -50%;
+      left: -30%;
+      //transform: rotate(120deg);
+      border-radius: 50% 50% 130% 130%;
+    }
+  }
+}
+
+@keyframes chew {
+  0%   { border-radius: 50% 40% 50% 40%; }
+  50%  { border-radius: 50% 40% 40% 50%; }
+  100% { border-radius: 50% 40% 50% 40%; }
+}
+
+@keyframes grass {
+  0%   { border-radius: 50% 40% 50% 40%; }
+  50%  { border-radius: 20% 40% 10% 50%; }
+  100% { border-radius: 50% 40% 50% 40%; }
+}
+
+@keyframes earFlick {
+  0%   { transform: rotate(70deg); }
+  9%   { transform: rotate(70deg); }
+  10%  { transform: rotate(50deg); }
+  15%  { transform: rotate(70deg); }
+  100% { transform: rotate(70deg); }
+}

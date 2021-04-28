@@ -16,6 +16,9 @@ export class NavBarComponent  {
           this.arr = res;
           this.iconCart = res == null ||  this.arr.length == 0  ? false : true; 
           console.log(" this.iconCart", this.iconCart);
+     
+      
+
     })
   }
 }

@@ -13,6 +13,8 @@ import { CardComponent } from './component/card/card.component';
 import { ListCardComponent } from './component/list-card/list-card.component';
 import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { CowPartsComponent } from './component/cow-parts/cow-parts.component';
+import { MaterialModule } from './material/material.module';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
     CardComponent,
     ListCardComponent,
     ShopingCartComponent,
-    PaymentPageComponent
+    PaymentPageComponent,
+    CowPartsComponent
   ],
   imports: [
     HttpClientModule,
@@ -32,6 +35,7 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

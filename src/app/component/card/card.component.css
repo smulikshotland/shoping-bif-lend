@@ -2,6 +2,7 @@
   width: 200px;
     height: 320px; 
     text-align: center;
+   
 }
 .cRow{
     display: flex;
@@ -19,18 +20,27 @@
   }
   
   .PText:hover {
-    overflow: visible;
-    white-space:inherit;
-    background: rgb(247, 246, 190);
-    border-radius: 5px;
-    height: 180px;
-    margin: -185px 0;
-    position: absolute;
-    width: 168px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    /* overflow: visible; */
+    /* white-space:inherit; */
+    /* background: rgb(247, 246, 190); */
+    /* border-radius: 5px; */
+    /* height: 180px;
+    margin: -185px 0; */
+    /* position: absolute; */
+    /* width: 168px; */
+    /* overflow-x: hidden; */
+    /* overflow-y: scroll; */
   }
 
 .img-fluid{
     height: 150px;   
+}
+.card-h:hover {
+  width: 250px;
+  height: 370px;
+}
+
+.card-h:active {
+  border: 5px saddlebrown solid; 
+  
 }

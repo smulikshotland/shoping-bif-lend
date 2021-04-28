@@ -1,9 +1,17 @@
 
-<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="nav-link text-light" routerLink="shoping-cart" href="#"> 
-      <img *ngIf="!iconCart" src="assets\icons\SpottedBriskDuckbillplatypus-max-1mb.gif" height="40px">
-      <img *ngIf="iconCart" src="assets\icons\cartshoging.gif" height="40px">
+    <a class="nav-link text-light" routerLink="shoping-cart" href="#">  
+     <img *ngIf="!iconCart" src="assets\icons\SpottedBriskDuckbillplatypus-max-1mb.gif" height="40px">
+     <div *ngIf="iconCart" >
+       <img class="imga" src="assets\icons\cart.gif" height="60" width="120">
+         <div class="row rowImg">
+              <div class="colImg" *ngFor="let item of arr">
+                  <img style="border-radius: 30%;margin: 23px 0;" src={{item.img}} height="7px" width="25px">
+              </div>
+
+         </div>
+    </div>
 
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +41,7 @@
           <a class="nav-link text-light" href="#">מבצעים</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-primary" type="submit">חיפוש</button>
-      </form>
+ 
     </div>
   </div>
 </nav>

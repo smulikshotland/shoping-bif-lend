@@ -4,13 +4,13 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
 
-export interface ShopingCart {
-  id: string,
-  title: string
-  name: string,
-  img: string
-  amount: Number
-}
+export interface ShopingCart{
+  id:string,
+  title:string
+  name:string,
+  img:string,
+  price:number,
+  amount:Number}
 
 @Injectable({
   providedIn: 'root'

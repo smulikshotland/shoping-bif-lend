@@ -1,4 +1,4 @@
-ol{
+/* ol{
     margin: 10px;
 }
 .col-in-footer{
@@ -12,4 +12,14 @@ ul{
 .titel-col{
     font-style: italic;
     font-size: x-large;
+} */
+.page-footer{
+    direction: rtl;
 }
+h5{
+    text-align: center;
+}
+li{
+    text-align: center;
+}
+

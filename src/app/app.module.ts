@@ -12,6 +12,10 @@ import { MatSliderModule } from '@angular/material/slider';
 import { CardComponent } from './component/card/card.component';
 import { ListCardComponent } from './component/list-card/list-card.component';
 import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.component';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { CowPartsComponent } from './component/cow-parts/cow-parts.component';
+import { MaterialModule } from './material/material.module';
+import { TranslocoRootModule } from './transloco/transloco-root.module';
 
 
 @NgModule({
@@ -22,7 +26,9 @@ import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.comp
     FooterComponent,
     CardComponent,
     ListCardComponent,
-    ShopingCartComponent
+    ShopingCartComponent,
+    PaymentPageComponent,
+    CowPartsComponent
   ],
   imports: [
     HttpClientModule,
@@ -30,6 +36,8 @@ import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.comp
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MaterialModule,
+    TranslocoRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]

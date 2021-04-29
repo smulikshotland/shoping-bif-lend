@@ -36,8 +36,8 @@ export class CardComponent implements OnInit {
         price:price
       })
       this.showSuccess = true;
-      setTimeout(() => {
-        this.showSuccess = false;
+      setTimeout(()=>{
+            this.showSuccess = false;
       }, 1000);
     }
     else {

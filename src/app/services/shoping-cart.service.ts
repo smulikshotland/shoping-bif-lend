@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 
 export interface ShopingCart{
@@ -10,46 +10,44 @@ export interface ShopingCart{
   name:string,
   img:string,
   price:number,
-  amount:Number}
+  amount:number}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopingCartService {
-  ShopingCart: ShopingCart[] = [];
-  ShopingCart$ = new BehaviorSubject<ShopingCart[]>(null);
+  ShopingCart:ShopingCart[]= [];
+  listShopingCart$ = new BehaviorSubject<ShopingCart[]>(null); 
 
 
-  constructor(private http: HttpClient) { }
-  getData() {
+  constructor(private http: HttpClient) {}
+  getData(){
     return this.http.get<any[]>('assets/data.json').toPromise();
   }
 
-  addToShopingCart(itme) {
-
-    const { id, amount } = itme;
+ 
+  addToShopingCart(itme){
+  
+    const{id ,amount} = itme;
     const index = this.ShopingCart.findIndex(x => x.id === id);
-    if (index == -1)
+    if(index == -1) 
       this.ShopingCart.push(itme)
+    else 
+      this.ShopingCart[index].amount = amount;
 
-    else {
-      const update = this.ShopingCart.map(el => {
-        if (el.id == id) {
-          return {
-            ...el,
-            amount: amount,
-          }
-        }
-        else
-          return el;
-      });
-      this.ShopingCart = update;
-    }
+    this.listShopingCart$.next(this.ShopingCart)
   }
-  rmoveItmeCart(itme) {
+
+  getlistShopingCart(): Observable<any> {
+    return this.listShopingCart$.asObservable();
+  }
+
+  rmoveItmeCart(itme){
     const filteredShopingCart = this.ShopingCart.filter((item) => item.id !== itme.id);
-    return this.ShopingCart = filteredShopingCart;
-
+    this.ShopingCart= filteredShopingCart;
+    this.listShopingCart$.next(this.ShopingCart)
   }
+
+
 
 }

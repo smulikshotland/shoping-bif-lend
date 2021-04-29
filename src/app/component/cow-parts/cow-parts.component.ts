@@ -11,5 +11,18 @@ export class CowPartsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  showText(num, cardCuadroTag) {
+    console.log("onMouseOver" ,num,cardCuadroTag);
+    
+    // cardCuadroTag.children["2"].style.display = "none";
+    // cardCuadroTag.children["1"].style.display = "block";
+  }
+
+  hideLast(cardCuadroTag) {
+    console.log("onMouseOut",cardCuadroTag);
+    
+    // cardCuadroTag.children["2"].style.display = "block";
+    // cardCuadroTag.children["1"].style.display = "none";
+  }
 
 }

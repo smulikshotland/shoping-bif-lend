@@ -1,4 +1,8 @@
-<a routerLink="/" routerLinkActive="active"><h1> המשך בקניה </h1></a>
+<a routerLink="/" routerLinkActive="active">
+  <span class="material-icons-outlined">
+    <mat-icon> cancel</mat-icon>
+ 
+  </span></a>
 
 <div class="container">
     <div class="row">
@@ -11,7 +15,7 @@
        
           <div class="ms-2 me-auto col-7">
             <div class="row" > 
-              <p class="badge bg-primary rounded-pill">₪{{item.price*item.amount}}---- {{item.amount}}</p>
+              <p class="badge badge-light rounded-pill"><samp>₪{{item.price}}</samp> <samp> X {{item.amount}}</samp><span> = </span> ₪{{item.price*item.amount}} </p>
             </div>
             <div class="fw-bold ">{{item.title}}</div>
             <div [ngClass]="item.name.length > 20 ? 'item-name' : ''">

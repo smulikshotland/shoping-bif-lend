@@ -5,7 +5,7 @@ import { InnerRouterComponent } from './inner-router/inner-router.component';
 import { ShopingCartComponent } from './component/shoping-cart/shoping-cart.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 
-  
+
 
 const routes: Routes = [
   { path: '', component: InnerRouterComponent },

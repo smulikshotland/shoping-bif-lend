@@ -10,18 +10,18 @@ export class CardComponent implements OnInit {
   @Input() item:{ id: string;name:string, title: string; price:number; img: string; }
   cunter = 0;
   showSuccess = false;
-  constructor(private ShopingCartService:ShopingCartService) { }
+  constructor(private ShopingCartService: ShopingCartService) { }
 
   ngOnInit(): void {
   }
 
-  toAdd(){
+  toAdd() {
     this.cunter++;
   }
 
-  toDecreas(){
-    if(this.cunter>0)
-    this.cunter--;
+  toDecreas() {
+    if (this.cunter > 0)
+      this.cunter--;
   }
 
   addToShopingCard(){
@@ -38,10 +38,10 @@ export class CardComponent implements OnInit {
       this.showSuccess = true;
       setTimeout(()=>{
             this.showSuccess = false;
-      }, 2000);
+      }, 1000);
     }
-    else{
-      
+    else {
+
     }
   }
 

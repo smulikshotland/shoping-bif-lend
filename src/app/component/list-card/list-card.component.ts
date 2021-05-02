@@ -6,18 +6,18 @@ import { ShopingCartService } from './../../services/shoping-cart.service';
   styleUrls: ['./list-card.component.css']
 })
 export class ListCardComponent implements OnInit {
-  data:{ id: string;name:string, title: string; img: string; }[];
+  data: { id: string; name: string, title: string; img: string; }[];
 
-  constructor(private ShopingCartService:ShopingCartService) { }
+  constructor(private ShopingCartService: ShopingCartService) { }
   ngOnInit(): void {
     this.ShopingCartService.getData()
-      .then( result => {
+      .then(result => {
         this.data = result;
       })
-      .catch( error => {
+      .catch(error => {
         console.log('Error Getting Data: ', error);
       });
   }
- 
+
 
 }
